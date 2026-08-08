@@ -1,3 +1,5 @@
+###PROMPTS###
+
 here, 1 thoguhtful idea should be that it contains level of students learning like intermediate begginner or pro/master that goes on improving after continuous streak  and acc to that give streak questions 
 you have to see all these details for this competition and then gimme a roadmap to follow to make it like which tech to use for it all the stagees 
 keep in mind journey should use free tools nogt paid
@@ -78,3 +80,16 @@ components later.
 Make sure day 1 starts as pending with streak 0 (need this for the empty/
 first-day state), and add at least one day marked "missed" so I can build 
 the missed-day UI against real data instead of guessing.
+
+----
+
+ok now build the landing page for it in a way that its for a student who's never heard of ABTalkslanding shows 60-day coding challenge for new comers, they pick a track and know a lot baout it. Need: short hero explaining this in one line, why it matters, and a clear "Start your streak" CTA to attract users.
+
+----
+
+Now build dashboard using the data.json I set up earlier. get streak info from there student.level, student.completion. Need is: streak counter, today's task card (pull from days array using current day), overall progress bar, completion %, and a level badge (Beginner/Intermediate/Pro) with a small progress-to-next-level bar using getLevel() and levelThresholds. This is the main screen so make the 
+level badge visually prominent, not just a small tag somewhere.
+
+
+----
+
