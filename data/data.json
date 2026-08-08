@@ -1,0 +1,28 @@
+{
+  "student": {
+    "name": "Aisha",
+    "streak": 12,
+    "level": "Intermediate",
+    "completion": 0.2
+  },
+  "days": [
+    { "day": 1, "level": "Beginner", "task": "Build a static landing page with your name and a tagline.", "status": "done" },
+    { "day": 2, "level": "Beginner", "task": "Add a button that changes color on hover using CSS.", "status": "done" },
+    { "day": 3, "level": "Beginner", "task": "Create a simple form that logs input to the console.", "status": "done" },
+    { "day": 4, "level": "Beginner", "task": "Style a card component using Tailwind CSS.", "status": "done" },
+    { "day": 5, "level": "Beginner", "task": "Fetch and display data from a local JSON file.", "status": "done" },
+    { "day": 6, "level": "Beginner", "task": "Build a simple to-do list with add/remove items.", "status": "done" },
+    { "day": 7, "level": "Beginner", "task": "Add basic routing between two pages.", "status": "done" },
+    { "day": 8, "level": "Intermediate", "task": "Build a progress bar component that takes a percentage prop.", "status": "done" },
+    { "day": 9, "level": "Intermediate", "task": "Create a dashboard layout with a sidebar and main content area.", "status": "done" },
+    { "day": 10, "level": "Intermediate", "task": "Store and read data from localStorage.", "status": "done" },
+    { "day": 11, "level": "Intermediate", "task": "Build a dynamic route that shows different content per ID.", "status": "done" },
+    { "day": 12, "level": "Intermediate", "task": "Build a submission form with a GitHub link and LinkedIn post field.", "status": "pending" },
+    { "day": 13, "level": "Intermediate", "task": "Add form validation with error messages.", "status": "pending" }
+  ],
+  "levelThresholds": {
+    "Beginner": 0,
+    "Intermediate": 7,
+    "Pro": 21
+  }
+}

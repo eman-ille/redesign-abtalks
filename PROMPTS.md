@@ -65,3 +65,16 @@ acc to it make the pdf now with instructions of thises
 
 ----
 
+Ok so now i Need a data.json 
+for mock data, no real backend allowed anyway. Structure: a student object 
+(name, streak, level, completion %), a levelThresholds object mapping 
+streak days to level (Beginner(0day) /Intermediate(7 days) /Pro(21 days)), and a days array for 
+60 days each with day number, level, task, status.
+
+Also gimme a getLevel(streak) helper fn that reads from levelThresholds 
+so I'm not hardcoding "Beginner"/"Intermediate" strings everywhere in the 
+components later.
+
+Make sure day 1 starts as pending with streak 0 (need this for the empty/
+first-day state), and add at least one day marked "missed" so I can build 
+the missed-day UI against real data instead of guessing.
