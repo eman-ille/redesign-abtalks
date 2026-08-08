@@ -93,3 +93,8 @@ level badge visually prominent, not just a small tag somewhere.
 
 ----
 
+Build /day/[id] as a dynamic route so /day/12 works. Show that day's task from data.json, a short "what to build" section, and two submission inputs GitHub repo/commit link and LinkedIn post URL. On submit just update localStorage to mark the day done, no backend as this is a hackathon with mocked data only. 
+
+
+----
+
