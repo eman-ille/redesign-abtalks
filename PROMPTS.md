@@ -141,3 +141,142 @@ or looks unfinished.
 
 ----
 
+ok now all things done again cross check it im sharing you all details having hackathon task details with submission checks and rules 
+
+Hackathon Rules and Evaluation Process
+To ensure a fair competition, every submission goes through a four-stage evaluation process. Automated verification is completed before judging so that judges only review valid submissions.
+1
+Stage 1: Eligibility Verification
+Automatic Verification | Pass / Fail
+All submissions are automatically verified during submission and rechecked after the submission deadline.
+A submission must satisfy all of the following requirements:
+
+* Repository must be publicly accessible.
+* Repository URL must be valid and accessible.
+* Live Demo URL must be functional and return a working application.
+* AI Usage Log must be included and accessible.
+* Submission must belong to a registered team.
+* Submission must be received before the official deadline.
+
+Any submission that fails one or more of the above requirements will not proceed to judging.
+2
+Stage 2: Authenticity Review
+Automated Analysis + Manual Review
+This stage verifies that the project was genuinely created during the hackathon.
+The following indicators may trigger a manual review or even disqualification:
+
+* Repository was created before the official hackathon kickoff.
+* The first commit already contains most of the project, indicating an imported codebase.
+* Commit history shows little or no development activity during the hackathon, followed by a large final commit.
+* The AI Usage Log does not reasonably correspond to the implemented features.
+* Prompt history appears incomplete, generic, or unrelated to the submitted project.
+
+3
+Stage 3: Project Judging
+Two Independent Judges | 100 Points
+Eligible submissions are evaluated independently by the judges using the published judging rubric.
+
+* Each judge scores the project separately.
+* Judges do not see each other's scores.
+* The final score is the average of both judges' scores.
+* If the difference between the two scores exceeds 15 points, a third judge will evaluate the project.
+* In such cases, the median score of the three judges becomes the final score.
+
+Only submissions that successfully complete Stages 1 and 2 are evaluated by judges.
+4
+Stage 4: Live Steer Challenge
+Final Round | Top 6 Teams
+The six highest-scoring teams qualify for the Live Steer Challenge.
+Each finalist team will:
+
+* Join a live video call.
+* Share their screen throughout the challenge.
+* Receive the same previously unseen feature request.
+* Implement the feature within 20 minutes using their own repository.
+* Use any AI tools they used during the hackathon.
+
+The Live Steer Challenge ensures that finalists can demonstrate the same AI-assisted development skills used throughout the hackathon.
+All verification and judging decisions made by the organizers are final.
+
+Redesign ABTalks
+Reimagine the platform you're standing on.
+The Situation
+ABTalks runs a 60-day coding challenge for Indian college students.
+Students pick a track, build something every day, and maintain a public learning streak by submitting:
+
+* A GitHub commit
+* A LinkedIn post
+
+This daily proof of work helps them build consistency and become visible to recruiters.
+Most students use the platform on their phones, late at night after college.
+The product works.
+It has never been designed.
+Ship at Minimum
+Design and build the following three screens.
+1. Landing Page (`/`)
+The first experience for a student who has never heard of ABTalks.
+Show enough trust, clarity, and motivation that they're willing to commit to a 60-day challenge.
+2. Student Dashboard (`/dashboard`)
+The home screen after logging in.
+Include essentials such as:
+
+* Current streak
+* Today's task
+* Progress through the challenge
+* Overall completion
+* Student standing or achievements
+
+3. Challenge Day (`/day/12`)
+The complete experience of a single challenge day.
+A student should be able to:
+
+* Read the day's task
+* Understand what needs to be built
+* Submit proof of work
+   * GitHub repository/commit
+   * LinkedIn post
+
+Submission
+Along with your repository and live deployment URL, include a Route Map.
+Provide the three routes below, one per line, in this exact order:
+
+```text
+/
+/dashboard
+/day/12
+
+```
+
+We'll open every submission at 390px width (mobile viewport) and automatically capture screenshots of these routes.
+Providing the route map ensures we don't have to guess your URLs.
+What We're Looking For
+Your redesign should:
+
+* Be designed mobile-first (390px), with desktop as a secondary consideration.
+* Be understandable to a student who has never heard of ABTalks.
+* Handle real-world edge cases such as:
+   * First day with no streak
+   * A missed day
+   * An empty profile
+* Introduce at least one thoughtful idea that improves the student experience.
+
+Out of Scope
+You do not need to build:
+
+* Authentication
+* Real user accounts
+* A production database
+
+Use mocked data instead.
+A simple JSON file (written by you or generated using AI) is sufficient as long as the interface feels realistic.
+Also out of scope:
+
+* Recruiter dashboard
+* Admin panel
+* Matching ABTalks' current tech stack
+
+Build using any framework or technology your AI workflow is most productive with.
+
+-----
+
+

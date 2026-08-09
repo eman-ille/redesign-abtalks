@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ABTalks — Redesign
 
-## Getting Started
+A mobile-first redesign of ABTalks, a 60-day coding streak challenge for
+Indian college students. Built for the ABTalks Vibe Code Hackathon.
 
-First, run the development server:
+## Route Map
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+/
+/dashboard
+/day/12
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What it is
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ABTalks students build something every day and prove it with a GitHub
+commit + a LinkedIn post, maintaining a public streak. Most students use
+it on their phones, late at night. This redesign focuses on that exact
+context: fast to read at 390px, motivating without being noisy, and clear
+about where a student stands at any moment.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Routes
 
-## Learn More
+- **`/`** — Landing page for someone who's never heard of ABTalks. Explains
+  the 60-day format and pushes toward starting a streak.
+- **`/dashboard`** — Home screen after "logging in" (mocked). Shows current
+  streak, today's task, overall progress, level, and achievements.
+- **`/day/[day]`** — A single challenge day: task description, and a
+  submission form for a GitHub link + LinkedIn post link (mocked, saved to
+  `localStorage`, no real backend).
 
-To learn more about Next.js, take a look at the following resources:
+## Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js (App Router)
+- Tailwind CSS
+- `data/data.json` as the mocked backend
+- `localStorage` for demo persistence (day submissions, level-up tracking)
+- `canvas-confetti` for the level-up moment
+- Deployed on Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## The idea we leaned into
 
-## Deploy on Vercel
+A terminal / dev-log aesthetic, since the audience is students who already
+live in a code editor. The streak card reads like a contribution graph,
+level names are flavored as build stages (`BOOTSTRAPPING` →
+`COMPILING` → `SHIPPED`), and system messages borrow git language
+(`git status: 1 day uncommitted`, `whoami: unknown`). Leveling up fires
+confetti and a small `✔ level_up.sh executed` toast — a small, literal
+payoff for consistency, which is the entire point of the product.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Edge cases handled
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All three are driven directly by the data in `data/data.json`, not hardcoded UI:
+
+- **First day / zero streak** — no name-based streak yet, dashboard shows
+  a welcoming "let's fix that" state instead of a bare "0".
+- **Missed day** — a day entry with `status: "missed"` resets the streak
+  to 0 but keeps the current level intact; only future task difficulty is
+  affected. Shown with a distinct, non-punishing banner on both the
+  dashboard and that specific day page.
+- **Empty profile** — no name and nothing completed yet. Falls back to
+  placeholder copy everywhere instead of rendering blank or `undefined`.
+
+To see each state, edit the `student` object and one `days` entry in
+`data/data.json` — no code changes needed.
+
+## Running locally
+
+```bash
+npm install
+npm run dev
+```
+
+## AI usage
+
+See `PROMPTS.md` for the full log of prompts used throughout the build.
