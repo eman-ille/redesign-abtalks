@@ -98,3 +98,21 @@ Build /day/[id] as a dynamic route so /day/12 works. Show that day's task from d
 
 ----
 
+
+Current dashboard feels flat, want to add personality without breaking the 
+terminal/dev aesthetic I already have (streak_history.log style). Changes:
+
+1. Streak flame emoji that scales/intensifies visually with streak count 
+   (small at day 1-6, bigger/brighter by 20+).
+2. Confetti burst (canvas-confetti) + a small toast like "✔ level_up.sh 
+   executed" when level changes from Beginner to Intermediate etc.
+3. Rename level display labels to have some flavor — keep Beginner/
+   Intermediate/Pro as the real value in data.json but show a fun display 
+   name for each, plus a one-line flavor tagline under the badge.
+4. Rewrite empty/missed-day copy to match the terminal vibe, e.g. missed 
+   day = "git status: 1 day uncommitted", empty profile = "whoami: unknown."
+
+Keep everything mobile-first at 390px, don't break existing layout.
+
+----
+
