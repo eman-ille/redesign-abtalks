@@ -1,7 +1,7 @@
 {
   "student": {
-    "name": "Ayeza",
-    "streak": 0,
+    "name": "Roha",
+    "streak": 12,
     "level": "Intermediate",
     "completion": 0.2
   },
@@ -14,7 +14,7 @@
     { "day": 6, "level": "Beginner", "task": "Build a simple to-do list with add/remove items.", "status": "done" },
     { "day": 7, "level": "Beginner", "task": "Add basic routing between two pages.", "status": "done" },
     { "day": 8, "level": "Intermediate", "task": "Build a progress bar component that takes a percentage prop.", "status": "done" },
-    { "day": 9, "level": "Intermediate", "task": "Create a dashboard layout with a sidebar and main content area.", "status": "missed" },
+    { "day": 9, "level": "Intermediate", "task": "Create a dashboard layout with a sidebar and main content area.", "status": "done" },
     { "day": 10, "level": "Intermediate", "task": "Store and read data from localStorage.", "status": "done" },
     { "day": 11, "level": "Intermediate", "task": "Build a dynamic route that shows different content per ID.", "status": "done" },
     { "day": 12, "level": "Intermediate", "task": "Build a submission form with a GitHub link and LinkedIn post field.", "status": "pending" },
