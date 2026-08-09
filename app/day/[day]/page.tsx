@@ -11,10 +11,10 @@ export default async function DayPage({
   const dayNumber = Number(day);
 
   const task = data.days.find((d) => d.day === dayNumber);
+  const isMissed = task?.status === "missed";
 
   return (
     <main className="min-h-screen bg-[#13141B] text-[#EAEAF0] font-sans pb-20">
-      {/* Nav */}
       <nav className="flex items-center justify-between px-6 sm:px-10 py-6 max-w-3xl mx-auto">
         <Link href="/" className="font-mono text-sm tracking-widest text-[#9FE6C9]">
           ABTALKS
@@ -26,7 +26,6 @@ export default async function DayPage({
 
       <div className="max-w-3xl mx-auto px-6 sm:px-10">
         {!task ? (
-          // Edge case: someone visits a day number that doesn't exist in data.json
           <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 text-center">
             <p className="text-lg font-semibold mb-2">Task not found</p>
             <p className="text-[#8A8D9A] text-sm mb-4">
@@ -42,24 +41,46 @@ export default async function DayPage({
         ) : (
           <>
             <p className="font-mono text-xs text-[#C6B8FA] tracking-widest mb-3">
-              DAY {task.day} · {task.level.toUpperCase()}
+              DAY {task.day} · {(task.level || "Beginner").toUpperCase()}
             </p>
             <h1 className="text-3xl font-bold mb-4">Today's task</h1>
 
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 mb-6">
-              <p className="text-[#EAEAF0] leading-relaxed">{task.task}</p>
+              <p className="text-[#EAEAF0] leading-relaxed">
+                {task.task || "Task details coming soon."}
+              </p>
               <span
-                className={`inline-block mt-4 text-xs font-semibold px-3 py-1 rounded-full border ${
+                className={`inline-block mt-4 text-xs font-mono font-semibold px-3 py-1 rounded-full border ${
                   task.status === "done"
                     ? "text-[#9FE6C9] bg-[#9FE6C9]/10 border-[#9FE6C9]/30"
-                    : "text-[#FFCFA0] bg-[#FFCFA0]/10 border-[#FFCFA0]/30"
+                    : isMissed
+                    ? "text-[#FFCFA0] bg-[#FFCFA0]/10 border-[#FFCFA0]/30"
+                    : "text-[#8A8D9A] bg-white/5 border-white/10"
                 }`}
               >
-                {task.status === "done" ? "Completed" : "Pending"}
+                {task.status === "done"
+                  ? "Completed"
+                  : isMissed
+                  ? "Missed — uncommitted"
+                  : "Pending"}
               </span>
             </div>
 
-            <SubmissionForm day={task.day} initialStatus={task.status} />
+            {isMissed ? (
+              <div className="bg-[#FFCFA0]/10 border border-[#FFCFA0]/30 rounded-2xl p-6 mb-6 font-mono">
+                <p className="text-[#FFCFA0] font-semibold text-sm mb-2">
+                  git status: 1 day uncommitted 👀
+                </p>
+                <p className="text-xs text-[#8A8D9A] leading-relaxed mb-4">
+                  This one went unsubmitted. It won't count against your
+                  level — but you can still catch up and submit it late
+                  if you'd like it marked done.
+                </p>
+                <SubmissionForm day={task.day} initialStatus={task.status} />
+              </div>
+            ) : (
+              <SubmissionForm day={task.day} initialStatus={task.status} />
+            )}
           </>
         )}
       </div>

@@ -116,3 +116,28 @@ Keep everything mobile-first at 390px, don't break existing layout.
 
 ----
 
+
+Need to handle 3 required edge cases across the dashboard and day pages, 
+keeping the terminal/dev tone I already set up:
+
+1. Zero-streak / first day: student.streak = 0, level = Beginner, no 
+   achievements. Dashboard should show something welcoming, not blank — 
+   "whoami: unknown. Let's fix that." plus a clear push toward starting 
+   day 1. No broken layout, no "0 days" looking like an error.
+
+2. Missed day: a day entry with status "missed". Show it distinctly but 
+   not punishing — "git status: 1 day uncommitted 👀" style, matches the 
+   git-log aesthetic. Decide: does streak reset to 0 or just pause? Go 
+   with reset to 0 but keep the level as-is (level only drops with future 
+   task difficulty, not instantly).
+
+3. Empty profile: no name, 0 days done, empty achievements array. Nothing 
+   should render as "undefined" or crash — swap in placeholder text and a 
+   friendly nudge, not a broken card.
+
+Test all three against all 3 routes at 390px, make sure nothing overflows 
+or looks unfinished.
+
+
+----
+
